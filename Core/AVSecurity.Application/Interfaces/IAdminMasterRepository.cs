@@ -58,5 +58,55 @@ namespace AVSecurity.Application.Interfaces
         Task<VisitorType_Response?> GetVisitorTypeById(int Id);
 
         #endregion
+
+        #region DvmServer
+
+        Task<int> SaveDvmServer(DvmServer_Request parameters);
+
+        Task<IEnumerable<DvmServer_Response>> GetDvmServerList(DvmServer_Search parameters);
+
+        Task<DvmServer_Response?> GetDvmServerById(int Id);
+
+        #endregion
+
+        #region EbiServer
+
+        Task<int> SaveEbiServer(EbiServer_Request parameters);
+
+        Task<IEnumerable<EbiServer_Response>> GetEbiServerList(EbiServer_Search parameters);
+
+        Task<EbiServer_Response?> GetEbiServerById(int Id);
+
+        #endregion
+
+        #region EmergencyType
+
+        Task<int> SaveEmergencyType(EmergencyType_Request parameters);
+
+        Task<IEnumerable<EmergencyType_Response>> GetEmergencyTypeList(EmergencyType_Search parameters);
+
+        Task<EmergencyType_Response?> GetEmergencyTypeById(int Id);
+
+        #endregion
+
+        #region EmergencyClosure
+
+        Task<int> SaveEmergencyClosure(EmergencyClosure_Request parameters);
+
+        Task<IEnumerable<EmergencyClosure_Response>> GetEmergencyClosureList(EmergencyClosure_Search parameters);
+
+        Task<EmergencyClosure_Response?> GetEmergencyClosureById(int Id);
+
+        #endregion
+
+        #region Shift
+
+        Task<int> SaveShift(Shift_Request parameters);
+
+        Task<IEnumerable<Shift_Response>> GetShiftList(Shift_Search parameters);
+
+        Task<Shift_Response?> GetShiftById(int Id);
+
+        #endregion
     }
 }

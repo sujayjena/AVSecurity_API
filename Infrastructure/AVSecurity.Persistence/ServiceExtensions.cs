@@ -33,6 +33,7 @@ namespace AVSecurity.Persistence
             services.AddScoped<IAddressRepository, AddressRepository>();
             services.AddScoped<IEmployeeLevelRepository, EmployeeLevelRepository>();
             services.AddScoped<INotificationRepository, NotificationRepository>();
+            services.AddScoped<IAdminMasterRepository, AdminMasterRepository>();
         }
     }
 }

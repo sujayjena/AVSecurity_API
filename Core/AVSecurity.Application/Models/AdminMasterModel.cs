@@ -118,4 +118,114 @@ namespace AVSecurity.Application.Models
     }
 
     #endregion
+
+    #region DvmServer
+
+    public class DvmServer_Search : BaseSearchEntity
+    {
+    }
+
+    public class DvmServer_Request : BaseEntity
+    {
+        public string? DvmServerName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class DvmServer_Response : BaseResponseEntity
+    {
+        public string? DvmServerName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
+
+    #region EbiServer
+
+    public class EbiServer_Search : BaseSearchEntity
+    {
+    }
+
+    public class EbiServer_Request : BaseEntity
+    {
+        public string? EbiServerName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class EbiServer_Response : BaseResponseEntity
+    {
+        public string? EbiServerName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
+
+    #region EmergencyType
+
+    public class EmergencyType_Search : BaseSearchEntity
+    {
+    }
+
+    public class EmergencyType_Request : BaseEntity
+    {
+        public string? EmergencyTypeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class EmergencyType_Response : BaseResponseEntity
+    {
+        public string? EmergencyTypeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
+
+    #region EmergencyClosure
+
+    public class EmergencyClosure_Search : BaseSearchEntity
+    {
+    }
+
+    public class EmergencyClosure_Request : BaseEntity
+    {
+        public string? EmergencyClosureName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class EmergencyClosure_Response : BaseResponseEntity
+    {
+        public string? EmergencyClosureName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
+
+    #region Shift
+
+    public class Shift_Search : BaseSearchEntity
+    {
+    }
+
+    public class Shift_Request : BaseEntity
+    {
+        public string? ShiftName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class Shift_Response : BaseResponseEntity
+    {
+        public string? ShiftName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
 }
