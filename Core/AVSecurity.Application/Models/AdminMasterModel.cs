@@ -228,4 +228,70 @@ namespace AVSecurity.Application.Models
     }
 
     #endregion
+
+    #region Route
+
+    public class Route_Search : BaseSearchEntity
+    {
+    }
+
+    public class Route_Request : BaseEntity
+    {
+        public string? RouteName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class Route_Response : BaseResponseEntity
+    {
+        public string? RouteName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
+
+    #region Verified
+
+    public class Verified_Search : BaseSearchEntity
+    {
+    }
+
+    public class Verified_Request : BaseEntity
+    {
+        public string? VerifiedName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class Verified_Response : BaseResponseEntity
+    {
+        public string? VerifiedName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
+
+    #region MeritalStatus
+
+    public class MeritalStatus_Search : BaseSearchEntity
+    {
+    }
+
+    public class MeritalStatus_Request : BaseEntity
+    {
+        public string? MeritalStatusName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class MeritalStatus_Response : BaseResponseEntity
+    {
+        public string? MeritalStatusName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
 }

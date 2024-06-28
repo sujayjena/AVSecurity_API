@@ -570,5 +570,170 @@ namespace AVSecurity.API.Controllers.Admin
         }
 
         #endregion
+
+        #region Route
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ResponseModel> SaveRoute(Route_Request parameters)
+        {
+            int result = await _adminMasterRepository.SaveRoute(parameters);
+
+            if (result == (int)SaveOperationEnums.NoRecordExists)
+            {
+                _response.Message = "No record exists";
+            }
+            else if (result == (int)SaveOperationEnums.ReocrdExists)
+            {
+                _response.Message = "Record is already exists";
+            }
+            else if (result == (int)SaveOperationEnums.NoResult)
+            {
+                _response.Message = "Something went wrong, please try again";
+            }
+            else
+            {
+                _response.Message = "Record details saved sucessfully";
+            }
+            return _response;
+        }
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ResponseModel> GetRouteList(Route_Search parameters)
+        {
+            IEnumerable<Route_Response> lstRoles = await _adminMasterRepository.GetRouteList(parameters);
+            _response.Data = lstRoles.ToList();
+            _response.Total = parameters.Total;
+            return _response;
+        }
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ResponseModel> GetRouteById(int Id)
+        {
+            if (Id <= 0)
+            {
+                _response.Message = "Id is required";
+            }
+            else
+            {
+                var vResultObj = await _adminMasterRepository.GetRouteById(Id);
+                _response.Data = vResultObj;
+            }
+            return _response;
+        }
+
+        #endregion
+
+        #region Verified
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ResponseModel> SaveVerified(Verified_Request parameters)
+        {
+            int result = await _adminMasterRepository.SaveVerified(parameters);
+
+            if (result == (int)SaveOperationEnums.NoRecordExists)
+            {
+                _response.Message = "No record exists";
+            }
+            else if (result == (int)SaveOperationEnums.ReocrdExists)
+            {
+                _response.Message = "Record is already exists";
+            }
+            else if (result == (int)SaveOperationEnums.NoResult)
+            {
+                _response.Message = "Something went wrong, please try again";
+            }
+            else
+            {
+                _response.Message = "Record details saved sucessfully";
+            }
+            return _response;
+        }
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ResponseModel> GetVerifiedList(Verified_Search parameters)
+        {
+            IEnumerable<Verified_Response> lstRoles = await _adminMasterRepository.GetVerifiedList(parameters);
+            _response.Data = lstRoles.ToList();
+            _response.Total = parameters.Total;
+            return _response;
+        }
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ResponseModel> GetVerifiedById(int Id)
+        {
+            if (Id <= 0)
+            {
+                _response.Message = "Id is required";
+            }
+            else
+            {
+                var vResultObj = await _adminMasterRepository.GetVerifiedById(Id);
+                _response.Data = vResultObj;
+            }
+            return _response;
+        }
+
+        #endregion
+
+        #region MeritalStatus
+
+        //[Route("[action]")]
+        //[HttpPost]
+        //public async Task<ResponseModel> SaveMeritalStatus(MeritalStatus_Request parameters)
+        //{
+        //    int result = await _adminMasterRepository.SaveMeritalStatus(parameters);
+
+        //    if (result == (int)SaveOperationEnums.NoRecordExists)
+        //    {
+        //        _response.Message = "No record exists";
+        //    }
+        //    else if (result == (int)SaveOperationEnums.ReocrdExists)
+        //    {
+        //        _response.Message = "Record is already exists";
+        //    }
+        //    else if (result == (int)SaveOperationEnums.NoResult)
+        //    {
+        //        _response.Message = "Something went wrong, please try again";
+        //    }
+        //    else
+        //    {
+        //        _response.Message = "Record details saved sucessfully";
+        //    }
+        //    return _response;
+        //}
+
+        //[Route("[action]")]
+        //[HttpPost]
+        //public async Task<ResponseModel> GetMeritalStatusList(MeritalStatus_Search parameters)
+        //{
+        //    IEnumerable<MeritalStatus_Response> lstRoles = await _adminMasterRepository.GetMeritalStatusList(parameters);
+        //    _response.Data = lstRoles.ToList();
+        //    _response.Total = parameters.Total;
+        //    return _response;
+        //}
+
+        //[Route("[action]")]
+        //[HttpPost]
+        //public async Task<ResponseModel> GetMeritalStatusById(int Id)
+        //{
+        //    if (Id <= 0)
+        //    {
+        //        _response.Message = "Id is required";
+        //    }
+        //    else
+        //    {
+        //        var vResultObj = await _adminMasterRepository.GetMeritalStatusById(Id);
+        //        _response.Data = vResultObj;
+        //    }
+        //    return _response;
+        //}
+
+        #endregion
     }
 }

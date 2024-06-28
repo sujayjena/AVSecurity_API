@@ -108,5 +108,35 @@ namespace AVSecurity.Application.Interfaces
         Task<Shift_Response?> GetShiftById(int Id);
 
         #endregion
+
+        #region Route
+
+        Task<int> SaveRoute(Route_Request parameters);
+
+        Task<IEnumerable<Route_Response>> GetRouteList(Route_Search parameters);
+
+        Task<Route_Response?> GetRouteById(int Id);
+
+        #endregion
+
+        #region Verified
+
+        Task<int> SaveVerified(Verified_Request parameters);
+
+        Task<IEnumerable<Verified_Response>> GetVerifiedList(Verified_Search parameters);
+
+        Task<Verified_Response?> GetVerifiedById(int Id);
+
+        #endregion
+
+        #region MeritalStatus
+
+        Task<int> SaveMeritalStatus(MeritalStatus_Request parameters);
+
+        Task<IEnumerable<MeritalStatus_Response>> GetMeritalStatusList(MeritalStatus_Search parameters);
+
+        Task<MeritalStatus_Response?> GetMeritalStatusById(int Id);
+
+        #endregion
     }
 }
