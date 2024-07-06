@@ -138,5 +138,25 @@ namespace AVSecurity.Application.Interfaces
         Task<MeritalStatus_Response?> GetMeritalStatusById(int Id);
 
         #endregion
+
+        #region EmployeeType
+
+        Task<int> SaveEmployeeType(EmployeeType_Request parameters);
+
+        Task<IEnumerable<EmployeeType_Response>> GetEmployeeTypeList(EmployeeType_Search parameters);
+
+        Task<EmployeeType_Response?> GetEmployeeTypeById(int Id);
+
+        #endregion
+
+        #region Gender
+
+        Task<int> SaveGender(Gender_Request parameters);
+
+        Task<IEnumerable<Gender_Response>> GetGenderList(Gender_Search parameters);
+
+        Task<Gender_Response?> GetGenderById(int Id);
+
+        #endregion
     }
 }

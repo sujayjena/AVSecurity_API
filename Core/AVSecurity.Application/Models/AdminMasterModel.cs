@@ -294,4 +294,48 @@ namespace AVSecurity.Application.Models
     }
 
     #endregion
+
+    #region EmployeeType
+
+    public class EmployeeType_Search : BaseSearchEntity
+    {
+    }
+
+    public class EmployeeType_Request : BaseEntity
+    {
+        public string? EmployeeTypeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class EmployeeType_Response : BaseResponseEntity
+    {
+        public string? EmployeeTypeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
+
+    #region Gender
+
+    public class Gender_Search : BaseSearchEntity
+    {
+    }
+
+    public class Gender_Request : BaseEntity
+    {
+        public string? GenderName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class Gender_Response : BaseResponseEntity
+    {
+        public string? GenderName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
 }

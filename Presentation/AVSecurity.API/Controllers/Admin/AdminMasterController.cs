@@ -735,5 +735,115 @@ namespace AVSecurity.API.Controllers.Admin
         }
 
         #endregion
+
+        #region EmployeeType
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ResponseModel> SaveEmployeeType(EmployeeType_Request parameters)
+        {
+            int result = await _adminMasterRepository.SaveEmployeeType(parameters);
+
+            if (result == (int)SaveOperationEnums.NoRecordExists)
+            {
+                _response.Message = "No record exists";
+            }
+            else if (result == (int)SaveOperationEnums.ReocrdExists)
+            {
+                _response.Message = "Record is already exists";
+            }
+            else if (result == (int)SaveOperationEnums.NoResult)
+            {
+                _response.Message = "Something went wrong, please try again";
+            }
+            else
+            {
+                _response.Message = "Record details saved sucessfully";
+            }
+            return _response;
+        }
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ResponseModel> GetEmployeeTypeList(EmployeeType_Search parameters)
+        {
+            IEnumerable<EmployeeType_Response> lstRoles = await _adminMasterRepository.GetEmployeeTypeList(parameters);
+            _response.Data = lstRoles.ToList();
+            _response.Total = parameters.Total;
+            return _response;
+        }
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ResponseModel> GetEmployeeTypeById(int Id)
+        {
+            if (Id <= 0)
+            {
+                _response.Message = "Id is required";
+            }
+            else
+            {
+                var vResultObj = await _adminMasterRepository.GetEmployeeTypeById(Id);
+                _response.Data = vResultObj;
+            }
+            return _response;
+        }
+
+        #endregion
+
+        #region Gender
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ResponseModel> SaveGender(Gender_Request parameters)
+        {
+            int result = await _adminMasterRepository.SaveGender(parameters);
+
+            if (result == (int)SaveOperationEnums.NoRecordExists)
+            {
+                _response.Message = "No record exists";
+            }
+            else if (result == (int)SaveOperationEnums.ReocrdExists)
+            {
+                _response.Message = "Record is already exists";
+            }
+            else if (result == (int)SaveOperationEnums.NoResult)
+            {
+                _response.Message = "Something went wrong, please try again";
+            }
+            else
+            {
+                _response.Message = "Record details saved sucessfully";
+            }
+            return _response;
+        }
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ResponseModel> GetGenderList(Gender_Search parameters)
+        {
+            IEnumerable<Gender_Response> lstRoles = await _adminMasterRepository.GetGenderList(parameters);
+            _response.Data = lstRoles.ToList();
+            _response.Total = parameters.Total;
+            return _response;
+        }
+
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ResponseModel> GetGenderById(int Id)
+        {
+            if (Id <= 0)
+            {
+                _response.Message = "Id is required";
+            }
+            else
+            {
+                var vResultObj = await _adminMasterRepository.GetGenderById(Id);
+                _response.Data = vResultObj;
+            }
+            return _response;
+        }
+
+        #endregion
     }
 }

@@ -565,5 +565,89 @@ namespace AVSecurity.Persistence.Repositories
         }
 
         #endregion
+
+        #region EmployeeType
+
+        public async Task<int> SaveEmployeeType(EmployeeType_Request parameters)
+        {
+            DynamicParameters queryParameters = new DynamicParameters();
+
+            queryParameters.Add("@Id", parameters.Id);
+            queryParameters.Add("@EmployeeTypeName", parameters.EmployeeTypeName);
+            queryParameters.Add("@IsActive", parameters.IsActive);
+            queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
+
+            return await SaveByStoredProcedure<int>("SaveEmployeeType", queryParameters);
+        }
+
+        public async Task<IEnumerable<EmployeeType_Response>> GetEmployeeTypeList(EmployeeType_Search parameters)
+        {
+            DynamicParameters queryParameters = new DynamicParameters();
+
+            queryParameters.Add("@SearchText", parameters.SearchText.SanitizeValue());
+            queryParameters.Add("@IsActive", parameters.IsActive);
+            queryParameters.Add("@PageNo", parameters.PageNo);
+            queryParameters.Add("@PageSize", parameters.PageSize);
+            queryParameters.Add("@Total", parameters.Total, null, System.Data.ParameterDirection.Output);
+            queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
+
+            var result = await ListByStoredProcedure<EmployeeType_Response>("GetEmployeeTypeList", queryParameters);
+            parameters.Total = queryParameters.Get<int>("Total");
+
+            return result;
+        }
+
+        public async Task<EmployeeType_Response?> GetEmployeeTypeById(int Id)
+        {
+            DynamicParameters queryParameters = new DynamicParameters();
+
+            queryParameters.Add("@Id", Id);
+
+            return (await ListByStoredProcedure<EmployeeType_Response>("GetEmployeeTypeById", queryParameters)).FirstOrDefault();
+        }
+
+        #endregion
+
+        #region Gender
+
+        public async Task<int> SaveGender(Gender_Request parameters)
+        {
+            DynamicParameters queryParameters = new DynamicParameters();
+
+            queryParameters.Add("@Id", parameters.Id);
+            queryParameters.Add("@GenderName", parameters.GenderName);
+            queryParameters.Add("@IsActive", parameters.IsActive);
+            queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
+
+            return await SaveByStoredProcedure<int>("SaveGender", queryParameters);
+        }
+
+        public async Task<IEnumerable<Gender_Response>> GetGenderList(Gender_Search parameters)
+        {
+            DynamicParameters queryParameters = new DynamicParameters();
+
+            queryParameters.Add("@SearchText", parameters.SearchText.SanitizeValue());
+            queryParameters.Add("@IsActive", parameters.IsActive);
+            queryParameters.Add("@PageNo", parameters.PageNo);
+            queryParameters.Add("@PageSize", parameters.PageSize);
+            queryParameters.Add("@Total", parameters.Total, null, System.Data.ParameterDirection.Output);
+            queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
+
+            var result = await ListByStoredProcedure<Gender_Response>("GetGenderList", queryParameters);
+            parameters.Total = queryParameters.Get<int>("Total");
+
+            return result;
+        }
+
+        public async Task<Gender_Response?> GetGenderById(int Id)
+        {
+            DynamicParameters queryParameters = new DynamicParameters();
+
+            queryParameters.Add("@Id", Id);
+
+            return (await ListByStoredProcedure<Gender_Response>("GetGenderById", queryParameters)).FirstOrDefault();
+        }
+
+        #endregion
     }
 }
