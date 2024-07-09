@@ -338,4 +338,158 @@ namespace AVSecurity.Application.Models
     }
 
     #endregion
+
+    #region EventType
+
+    public class EventType_Search : BaseSearchEntity
+    {
+    }
+
+    public class EventType_Request : BaseEntity
+    {
+        public string? EventTypeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class EventType_Response : BaseResponseEntity
+    {
+        public string? EventTypeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
+
+    #region CourierName
+
+    public class CourierName_Search : BaseSearchEntity
+    {
+    }
+
+    public class CourierName_Request : BaseEntity
+    {
+        public string? CourierName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class CourierName_Response : BaseResponseEntity
+    {
+        public string? CourierName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
+
+    #region PBType
+
+    public class PBType_Search : BaseSearchEntity
+    {
+    }
+
+    public class PBType_Request : BaseEntity
+    {
+        public string? PBTypeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class PBType_Response : BaseResponseEntity
+    {
+        public string? PBTypeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
+
+    #region IncidentType
+
+    public class IncidentType_Search : BaseSearchEntity
+    {
+    }
+
+    public class IncidentType_Request : BaseEntity
+    {
+        public string? IncidentTypeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class IncidentType_Response : BaseResponseEntity
+    {
+        public string? IncidentTypeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
+
+    #region HandedOverByName
+
+    public class HandedOverByName_Search : BaseSearchEntity
+    {
+    }
+
+    public class HandedOverByName_Request : BaseEntity
+    {
+        public string? HandedOverByName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class HandedOverByName_Response : BaseResponseEntity
+    {
+        public string? HandedOverByName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
+
+    #region VehicleType
+
+    public class VehicleType_Search : BaseSearchEntity
+    {
+    }
+
+    public class VehicleType_Request : BaseEntity
+    {
+        public string? VehicleTypeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class VehicleType_Response : BaseResponseEntity
+    {
+        public string? VehicleTypeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
+
+    #region VisitPurpose
+
+    public class VisitPurpose_Search : BaseSearchEntity
+    {
+    }
+
+    public class VisitPurpose_Request : BaseEntity
+    {
+        public string? VisitPurposeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class VisitPurpose_Response : BaseResponseEntity
+    {
+        public string? VisitPurposeName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
 }

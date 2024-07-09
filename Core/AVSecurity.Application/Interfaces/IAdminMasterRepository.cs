@@ -158,5 +158,75 @@ namespace AVSecurity.Application.Interfaces
         Task<Gender_Response?> GetGenderById(int Id);
 
         #endregion
+
+        #region EventType
+
+        Task<int> SaveEventType(EventType_Request parameters);
+
+        Task<IEnumerable<EventType_Response>> GetEventTypeList(EventType_Search parameters);
+
+        Task<EventType_Response?> GetEventTypeById(int Id);
+
+        #endregion
+
+        #region CourierName
+
+        Task<int> SaveCourierName(CourierName_Request parameters);
+
+        Task<IEnumerable<CourierName_Response>> GetCourierNameList(CourierName_Search parameters);
+
+        Task<CourierName_Response?> GetCourierNameById(int Id);
+
+        #endregion
+
+        #region PBType
+
+        Task<int> SavePBType(PBType_Request parameters);
+
+        Task<IEnumerable<PBType_Response>> GetPBTypeList(PBType_Search parameters);
+
+        Task<PBType_Response?> GetPBTypeById(int Id);
+
+        #endregion
+
+        #region IncidentType
+
+        Task<int> SaveIncidentType(IncidentType_Request parameters);
+
+        Task<IEnumerable<IncidentType_Response>> GetIncidentTypeList(IncidentType_Search parameters);
+
+        Task<IncidentType_Response?> GetIncidentTypeById(int Id);
+
+        #endregion
+
+        #region HandedOverByName
+
+        Task<int> SaveHandedOverByName(HandedOverByName_Request parameters);
+
+        Task<IEnumerable<HandedOverByName_Response>> GetHandedOverByNameList(HandedOverByName_Search parameters);
+
+        Task<HandedOverByName_Response?> GetHandedOverByNameById(int Id);
+
+        #endregion
+
+        #region VehicleType
+
+        Task<int> SaveVehicleType(VehicleType_Request parameters);
+
+        Task<IEnumerable<VehicleType_Response>> GetVehicleTypeList(VehicleType_Search parameters);
+
+        Task<VehicleType_Response?> GetVehicleTypeById(int Id);
+
+        #endregion
+
+        #region VisitPurpose
+
+        Task<int> SaveVisitPurpose(VisitPurpose_Request parameters);
+
+        Task<IEnumerable<VisitPurpose_Response>> GetVisitPurposeList(VisitPurpose_Search parameters);
+
+        Task<VisitPurpose_Response?> GetVisitPurposeById(int Id);
+
+        #endregion
     }
 }
