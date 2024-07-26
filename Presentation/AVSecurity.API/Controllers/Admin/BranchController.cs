@@ -45,6 +45,7 @@ namespace AVSecurity.API.Controllers.Admin
                 }
 
                 var bParameter = new BranchSearch_Request();
+                bParameter.CompanyId = parameters.CompanyId ?? 0;
                 var tblBranchesList = await _branchRepository.GetBranchList(bParameter);
                 var vBranchList = tblBranchesList.ToList();
                 if (vBranchList.Count > 0)
