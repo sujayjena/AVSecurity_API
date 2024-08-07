@@ -34,6 +34,14 @@ namespace AVSecurity.Persistence
             services.AddScoped<IEmployeeLevelRepository, EmployeeLevelRepository>();
             services.AddScoped<INotificationRepository, NotificationRepository>();
             services.AddScoped<IAdminMasterRepository, AdminMasterRepository>();
+            services.AddScoped<IAttendanceRegisterRepository, AttendanceRegisterRepository>();
+            services.AddScoped<IAccessDoorChecklistRepository, AccessDoorChecklistRepository>();
+            services.AddScoped<IBadgesMissingRepository, BadgesMissingRepository>();
+            services.AddScoped<ICCTVMonitoringRepository, CCTVMonitoringRepository>();
+            services.AddScoped<ICommandCentreRepository, CommandCentreRepository>();
+            services.AddScoped<IEmergencyCallLogRepository, EmergencyCallLogRepository>();
+            services.AddScoped<IEscortDailyFeedbackRepository, EscortDailyFeedbackRepository>();
+            services.AddScoped<IExitEmployeeRepository, ExitEmployeeRepository>();
         }
     }
 }

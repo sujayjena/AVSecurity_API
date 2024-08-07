@@ -216,6 +216,8 @@ namespace AVSecurity.Application.Models
     public class Shift_Request : BaseEntity
     {
         public string? ShiftName { get; set; }
+        public string? FromTime { get; set; }
+        public string? ToTime { get; set; }
 
         public bool? IsActive { get; set; }
     }
@@ -223,7 +225,8 @@ namespace AVSecurity.Application.Models
     public class Shift_Response : BaseResponseEntity
     {
         public string? ShiftName { get; set; }
-
+        public string? FromTime { get; set; }
+        public string? ToTime { get; set; }
         public bool? IsActive { get; set; }
     }
 

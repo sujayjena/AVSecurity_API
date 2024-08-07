@@ -406,6 +406,8 @@ namespace AVSecurity.Persistence.Repositories
 
             queryParameters.Add("@Id", parameters.Id);
             queryParameters.Add("@ShiftName", parameters.ShiftName);
+            queryParameters.Add("@FromTime", parameters.FromTime);
+            queryParameters.Add("@ToTime", parameters.ToTime);
             queryParameters.Add("@IsActive", parameters.IsActive);
             queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
 
