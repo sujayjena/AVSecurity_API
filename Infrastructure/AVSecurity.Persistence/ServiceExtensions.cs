@@ -42,6 +42,10 @@ namespace AVSecurity.Persistence
             services.AddScoped<IEmergencyCallLogRepository, EmergencyCallLogRepository>();
             services.AddScoped<IEscortDailyFeedbackRepository, EscortDailyFeedbackRepository>();
             services.AddScoped<IExitEmployeeRepository, ExitEmployeeRepository>();
+            services.AddScoped<IFireAlarmChecklistRepository, FireAlarmChecklistRepository>();
+            services.AddScoped<IFoodDeliveryRepository, FoodDeliveryRepository>();
+            services.AddScoped<IFireExtinguisherRepository, FireExtinguisherRepository>();
+            services.AddScoped<IKeyRepository, KeyRepository>();
         }
     }
 }
