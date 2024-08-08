@@ -46,6 +46,7 @@ namespace AVSecurity.Persistence
             services.AddScoped<IFoodDeliveryRepository, FoodDeliveryRepository>();
             services.AddScoped<IFireExtinguisherRepository, FireExtinguisherRepository>();
             services.AddScoped<IKeyRepository, KeyRepository>();
+            services.AddScoped<IHandOverRepository, HandOverRepository>();
         }
     }
 }
