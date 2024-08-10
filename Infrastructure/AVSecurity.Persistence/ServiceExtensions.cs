@@ -47,6 +47,8 @@ namespace AVSecurity.Persistence
             services.AddScoped<IFireExtinguisherRepository, FireExtinguisherRepository>();
             services.AddScoped<IKeyRepository, KeyRepository>();
             services.AddScoped<IHandOverRepository, HandOverRepository>();
+            services.AddScoped<ILostAndFoundRepository, LostAndFoundRepository>();
+            services.AddScoped<IMasterAccessCardRepository, MasterAccessCardRepository>();
         }
     }
 }
