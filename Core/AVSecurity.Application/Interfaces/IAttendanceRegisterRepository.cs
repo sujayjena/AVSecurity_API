@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveAttendanceRegister(AttendanceRegister_Request parameters);
 
-        Task<IEnumerable<AttendanceRegister_Response>> GetAttendanceRegisterList(BaseSearchEntity parameters);
+        Task<IEnumerable<AttendanceRegister_Response>> GetAttendanceRegisterList(AttendanceRegisterSearch_Request parameters);
 
         Task<AttendanceRegister_Response?> GetAttendanceRegisterById(int Id);
     }

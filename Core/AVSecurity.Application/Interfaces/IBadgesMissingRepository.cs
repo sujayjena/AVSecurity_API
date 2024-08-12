@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveBadgesMissing(BadgesMissing_Request parameters);
 
-        Task<IEnumerable<BadgesMissing_Response>> GetBadgesMissingList(BaseSearchEntity parameters);
+        Task<IEnumerable<BadgesMissing_Response>> GetBadgesMissingList(BadgesMissingSearch_Request parameters);
 
         Task<BadgesMissing_Response?> GetBadgesMissingById(int Id);
     }

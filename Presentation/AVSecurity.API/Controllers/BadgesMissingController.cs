@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetBadgesMissingList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetBadgesMissingList(BadgesMissingSearch_Request parameters)
         {
             IEnumerable<BadgesMissing_Response> lstRoles = await _badgesMissingRepository.GetBadgesMissingList(parameters);
             _response.Data = lstRoles.ToList();

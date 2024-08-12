@@ -17,7 +17,7 @@ namespace AVSecurity.Application.Models
         public DateTime? DateAndTime { get; set; }
         public string? ReportedBy { get; set; }
         public string? CallDetails { get; set; }
-        public string? ReceivedBy { get; set; }
+        public int? ReceivedById { get; set; }
         public int? EmergencyTypeId { get; set; }
         public string? EmergencyDesc { get; set; }
         public int? EmergencyClosureId { get; set; }
@@ -31,6 +31,7 @@ namespace AVSecurity.Application.Models
         public DateTime? DateAndTime { get; set; }
         public string? ReportedBy { get; set; }
         public string? CallDetails { get; set; }
+        public int? ReceivedById { get; set; }
         public string? ReceivedBy { get; set; }
         public int? EmergencyTypeId { get; set; }
         public string? EmergencyTypeName { get; set; }

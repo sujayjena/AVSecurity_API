@@ -15,7 +15,7 @@ namespace AVSecurity.Application.Models
     {
         public int? ShiftId { get; set; }
         public DateTime? DateAndTime { get; set; }
-        public string? FireAlarmLocation { get; set; }
+        public int? LocationId { get; set; }
         public int? BuildingId { get; set; }
         public int? FloorId { get; set; }
         public string? LoopDeviceNumber { get; set; }
@@ -31,7 +31,8 @@ namespace AVSecurity.Application.Models
         public int? ShiftId { get; set; }
         public string? ShiftName { get; set; }
         public DateTime? DateAndTime { get; set; }
-        public string? FireAlarmLocation { get; set; }
+        public int? LocationId { get; set; }
+        public string? LocationName { get; set; }
         public int? BuildingId { get; set; }
         public string? BuildingName { get; set; }
         public int? FloorId { get; set; }

@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetCommandCentreList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetCommandCentreList(CommandCentreSearch_Request parameters)
         {
             IEnumerable<CommandCentre_Response> lstRoles = await _commandCentreRepository.GetCommandCentreList(parameters);
             _response.Data = lstRoles.ToList();

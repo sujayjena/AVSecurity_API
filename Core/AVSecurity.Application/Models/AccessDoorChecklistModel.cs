@@ -1,4 +1,5 @@
 ﻿using AVSecurity.Domain.Entities;
+using AVSecurity.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace AVSecurity.Application.Models
     {
         public int? ShiftId { get; set; }
         public DateTime? AccesDoorDate { get; set; }
-        public string? AccesDoorLocation { get; set; }
+        public int? LocationId { get; set; }
         public int? BuildingId { get; set; }
         public int? FloorId { get; set; }
 
@@ -41,6 +42,9 @@ namespace AVSecurity.Application.Models
         public bool? IsFaulty { get; set; }
         public string? ExpenseDesc { get; set; }
         public int? ReportedToId { get; set; }
+
+        [DefaultValue(false)]
+        public bool? IsNotificationToAdmin { get; set; }
     }
 
     public class AccessDoorChecklist_Response : BaseResponseEntity
@@ -48,7 +52,8 @@ namespace AVSecurity.Application.Models
         public int? ShiftId { get; set; }
         public string? ShiftName { get; set; }
         public DateTime? AccesDoorDate { get; set; }
-        public string? AccesDoorLocation { get; set; }
+        public int? LocationId { get; set; }
+        public string? LocationName { get; set; }
         public int? BuildingId { get; set; }
         public string? BuildingName { get; set; }
         public int? FloorId { get; set; }
@@ -63,5 +68,15 @@ namespace AVSecurity.Application.Models
         public string? ExpenseDesc { get; set; }
         public int? ReportedToId { get; set; }
         public string? ReportedTo { get; set; }
+        public bool? IsNotificationToAdmin { get; set; }
+    }
+
+    public class AccessDoorChecklistSearch_Request : BaseSearchEntity
+    {
+        [DefaultValue(null)]
+        public DateTime? FromDate { get; set; }
+
+        [DefaultValue(null)]
+        public DateTime? ToDate { get; set; }
     }
 }

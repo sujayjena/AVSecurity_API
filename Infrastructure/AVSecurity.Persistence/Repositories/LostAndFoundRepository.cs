@@ -34,6 +34,7 @@ namespace AVSecurity.Persistence.Repositories
             queryParameters.Add("@ReceiverId", parameters.ReceiverId);
             queryParameters.Add("@ReceiverIDNo", parameters.ReceiverIDNo);
             queryParameters.Add("@Remarks", parameters.Remarks);
+            queryParameters.Add("@IsNotificationToAdmin", parameters.IsNotificationToAdmin);
             queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
 
             return await SaveByStoredProcedure<int>("SaveLostAndFound", queryParameters);

@@ -33,6 +33,7 @@ namespace AVSecurity.Persistence.Repositories
             queryParameters.Add("@YesDesc", parameters.YesDesc);
             queryParameters.Add("@AnyObservations", parameters.AnyObservations);
             queryParameters.Add("@VehicleNo", parameters.VehicleNo);
+            queryParameters.Add("@IsNotificationToAdmin", parameters.IsNotificationToAdmin);
             queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
 
             return await SaveByStoredProcedure<int>("SaveExitEmployee", queryParameters);

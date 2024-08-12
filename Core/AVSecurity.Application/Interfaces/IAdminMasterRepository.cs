@@ -228,5 +228,15 @@ namespace AVSecurity.Application.Interfaces
         Task<VisitPurpose_Response?> GetVisitPurposeById(int Id);
 
         #endregion
+
+        #region Material Status
+
+        Task<int> SaveMaterialStatus(MaterialStatus_Request parameters);
+
+        Task<IEnumerable<MaterialStatus_Response>> GetMaterialStatusList(MaterialStatus_Search parameters);
+
+        Task<MaterialStatus_Response?> GetMaterialStatusById(int Id);
+
+        #endregion
     }
 }

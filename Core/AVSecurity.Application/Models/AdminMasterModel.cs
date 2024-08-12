@@ -495,4 +495,26 @@ namespace AVSecurity.Application.Models
     }
 
     #endregion
+
+    #region Material Status
+
+    public class MaterialStatus_Search : BaseSearchEntity
+    {
+    }
+
+    public class MaterialStatus_Request : BaseEntity
+    {
+        public string? MaterialStatusName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    public class MaterialStatus_Response : BaseResponseEntity
+    {
+        public string? MaterialStatusName { get; set; }
+
+        public bool? IsActive { get; set; }
+    }
+
+    #endregion
 }

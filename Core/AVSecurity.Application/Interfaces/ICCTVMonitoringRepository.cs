@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveCCTVMonitoring(CCTVMonitoring_Request parameters);
 
-        Task<IEnumerable<CCTVMonitoring_Response>> GetCCTVMonitoringList(BaseSearchEntity parameters);
+        Task<IEnumerable<CCTVMonitoring_Response>> GetCCTVMonitoringList(CCTVMonitoringSearch_Request parameters);
 
         Task<CCTVMonitoring_Response?> GetCCTVMonitoringById(int Id);
     }

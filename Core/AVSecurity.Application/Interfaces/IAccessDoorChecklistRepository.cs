@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveAccessDoorChecklist(AccessDoorChecklist_Request parameters);
 
-        Task<IEnumerable<AccessDoorChecklist_Response>> GetAccessDoorChecklistList(BaseSearchEntity parameters);
+        Task<IEnumerable<AccessDoorChecklist_Response>> GetAccessDoorChecklistList(AccessDoorChecklistSearch_Request parameters);
 
         Task<AccessDoorChecklist_Response?> GetAccessDoorChecklistById(int Id);
     }

@@ -26,6 +26,9 @@ namespace AVSecurity.Application.Models
         public string? YesDesc { get; set; }
         public string? AnyObservations { get; set; }
         public string? VehicleNo { get; set; }
+
+        [DefaultValue(false)]
+        public bool? IsNotificationToAdmin { get; set; }
     }
 
     public class ExitEmployee_Response : BaseResponseEntity
@@ -40,5 +43,6 @@ namespace AVSecurity.Application.Models
         public string? YesDesc { get; set; }
         public string? AnyObservations { get; set; }
         public string? VehicleNo { get; set; }
+        public bool? IsNotificationToAdmin { get; set; }
     }
 }

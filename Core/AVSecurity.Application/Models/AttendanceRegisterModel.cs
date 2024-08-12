@@ -1,6 +1,8 @@
 ﻿using AVSecurity.Domain.Entities;
+using AVSecurity.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,5 +31,14 @@ namespace AVSecurity.Application.Models
         public string? EmployeeName { get; set; }
         public DateTime? DateOutTime { get; set; }
         public string? Remarks { get; set; }
+    }
+
+    public class AttendanceRegisterSearch_Request : BaseSearchEntity
+    {
+        [DefaultValue(null)]
+        public DateTime? FromDate { get; set; }
+
+        [DefaultValue(null)]
+        public DateTime? ToDate { get; set; }
     }
 }

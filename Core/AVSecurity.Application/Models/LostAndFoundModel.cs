@@ -1,6 +1,7 @@
 ﻿using AVSecurity.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,9 @@ namespace AVSecurity.Application.Models
         public int? ReceiverId { get; set; }
         public string? ReceiverIDNo { get; set; }
         public string? Remarks { get; set; }
+
+        [DefaultValue(false)]
+        public bool? IsNotificationToAdmin { get; set; }
     }
 
     public class LostAndFound_Response : BaseResponseEntity
@@ -36,5 +40,6 @@ namespace AVSecurity.Application.Models
         public string? ReceiverName { get; set; }
         public string? ReceiverIDNo { get; set; }
         public string? Remarks { get; set; }
+        public bool? IsNotificationToAdmin { get; set; }
     }
 }

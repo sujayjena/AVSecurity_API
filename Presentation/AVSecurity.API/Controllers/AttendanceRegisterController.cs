@@ -50,7 +50,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetAttendanceRegisterList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetAttendanceRegisterList(AttendanceRegisterSearch_Request parameters)
         {
             IEnumerable<AttendanceRegister_Response> lstRoles = await _attendanceRegisterRepository.GetAttendanceRegisterList(parameters);
             _response.Data = lstRoles.ToList();

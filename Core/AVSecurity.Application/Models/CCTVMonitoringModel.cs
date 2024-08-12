@@ -1,4 +1,5 @@
 ﻿using AVSecurity.Domain.Entities;
+using AVSecurity.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,5 +54,14 @@ namespace AVSecurity.Application.Models
         public bool? IsCCTV2_FeedCheck { get; set; }
         public bool? IsCCTV3_FeedCheck { get; set; }
         public string? Remarks { get; set; }
+    }
+
+    public class CCTVMonitoringSearch_Request : BaseSearchEntity
+    {
+        [DefaultValue(null)]
+        public DateTime? FromDate { get; set; }
+
+        [DefaultValue(null)]
+        public DateTime? ToDate { get; set; }
     }
 }

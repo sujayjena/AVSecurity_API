@@ -27,7 +27,7 @@ namespace AVSecurity.Persistence.Repositories
             queryParameters.Add("@Id", parameters.Id);
             queryParameters.Add("@ShiftId", parameters.ShiftId);
             queryParameters.Add("@DateAndTime", parameters.DateAndTime);
-            queryParameters.Add("@FireAlarmLocation", parameters.FireAlarmLocation);
+            queryParameters.Add("@LocationId", parameters.LocationId);
             queryParameters.Add("@BuildingId", parameters.BuildingId);
             queryParameters.Add("@FloorId", parameters.FloorId);
             queryParameters.Add("@LoopDeviceNumber", parameters.LoopDeviceNumber);

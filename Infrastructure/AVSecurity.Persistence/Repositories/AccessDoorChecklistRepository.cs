@@ -27,7 +27,7 @@ namespace AVSecurity.Persistence.Repositories
             queryParameters.Add("@Id", parameters.Id);
             queryParameters.Add("@ShiftId", parameters.ShiftId);
             queryParameters.Add("@AccesDoorDate", parameters.AccesDoorDate);
-            queryParameters.Add("@AccesDoorLocation", parameters.AccesDoorLocation);
+            queryParameters.Add("@LocationId", parameters.LocationId);
             queryParameters.Add("@BuildingId", parameters.BuildingId);
             queryParameters.Add("@FloorId", parameters.FloorId);
             queryParameters.Add("@IsInReaderStatus", parameters.IsInReaderStatus);
@@ -39,15 +39,18 @@ namespace AVSecurity.Persistence.Repositories
             queryParameters.Add("@IsFaulty", parameters.IsFaulty);
             queryParameters.Add("@ExpenseDesc", parameters.ExpenseDesc);
             queryParameters.Add("@ReportedToId", parameters.ReportedToId);
+            queryParameters.Add("@IsNotificationToAdmin", parameters.IsNotificationToAdmin);
             queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
 
             return await SaveByStoredProcedure<int>("SaveAccessDoorChecklist", queryParameters);
         }
 
-        public async Task<IEnumerable<AccessDoorChecklist_Response>> GetAccessDoorChecklistList(BaseSearchEntity parameters)
+        public async Task<IEnumerable<AccessDoorChecklist_Response>> GetAccessDoorChecklistList(AccessDoorChecklistSearch_Request parameters)
         {
             DynamicParameters queryParameters = new DynamicParameters();
 
+            queryParameters.Add("@FromDate", parameters.FromDate);
+            queryParameters.Add("@ToDate", parameters.ToDate);
             queryParameters.Add("@SearchText", parameters.SearchText.SanitizeValue());
             //queryParameters.Add("@IsActive", parameters.IsActive);
             queryParameters.Add("@PageNo", parameters.PageNo);

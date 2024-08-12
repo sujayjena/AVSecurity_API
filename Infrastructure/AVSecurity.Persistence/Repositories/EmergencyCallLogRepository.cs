@@ -29,7 +29,7 @@ namespace AVSecurity.Persistence.Repositories
             queryParameters.Add("@DateAndTime", parameters.DateAndTime);
             queryParameters.Add("@ReportedBy", parameters.ReportedBy);
             queryParameters.Add("@CallDetails", parameters.CallDetails);
-            queryParameters.Add("@ReceivedBy", parameters.ReceivedBy);
+            queryParameters.Add("@ReceivedById", parameters.ReceivedById);
             queryParameters.Add("@EmergencyTypeId", parameters.EmergencyTypeId);
             queryParameters.Add("@EmergencyDesc", parameters.EmergencyDesc);
             queryParameters.Add("@EmergencyClosureId", parameters.EmergencyClosureId);

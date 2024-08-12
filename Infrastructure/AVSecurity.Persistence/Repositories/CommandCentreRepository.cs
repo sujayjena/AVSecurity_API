@@ -32,15 +32,18 @@ namespace AVSecurity.Persistence.Repositories
             queryParameters.Add("@ActionToken", parameters.ActionToken);
             queryParameters.Add("@ExitDate", parameters.ExitDate);
             queryParameters.Add("@Remarks", parameters.Remarks);
+            queryParameters.Add("@IsNotificationToAdmin", parameters.IsNotificationToAdmin);
             queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
 
             return await SaveByStoredProcedure<int>("SaveCommandCentre", queryParameters);
         }
 
-        public async Task<IEnumerable<CommandCentre_Response>> GetCommandCentreList(BaseSearchEntity parameters)
+        public async Task<IEnumerable<CommandCentre_Response>> GetCommandCentreList(CommandCentreSearch_Request parameters)
         {
             DynamicParameters queryParameters = new DynamicParameters();
 
+            queryParameters.Add("@FromDate", parameters.FromDate);
+            queryParameters.Add("@ToDate", parameters.ToDate);
             queryParameters.Add("@SearchText", parameters.SearchText.SanitizeValue());
             //queryParameters.Add("@IsActive", parameters.IsActive);
             queryParameters.Add("@PageNo", parameters.PageNo);

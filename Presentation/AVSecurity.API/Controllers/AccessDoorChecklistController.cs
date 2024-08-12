@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetAccessDoorChecklistList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetAccessDoorChecklistList(AccessDoorChecklistSearch_Request parameters)
         {
             IEnumerable<AccessDoorChecklist_Response> lstRoles = await _accessDoorChecklistRepository.GetAccessDoorChecklistList(parameters);
             _response.Data = lstRoles.ToList();

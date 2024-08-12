@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetCCTVMonitoringList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetCCTVMonitoringList(CCTVMonitoringSearch_Request parameters)
         {
             IEnumerable<CCTVMonitoring_Response> lstRoles = await _cctvMonitoringRepository.GetCCTVMonitoringList(parameters);
             _response.Data = lstRoles.ToList();
