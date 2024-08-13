@@ -41,6 +41,7 @@ namespace AVSecurity.Application.Models
     public class CCTVMonitoring_Response : BaseResponseEntity
     {
         public int? ShiftId { get; set; }
+        public string? ShiftName { get; set; }
         public DateTime? CCTVMonitoringDate { get; set; }
         public int? DvmServerId { get; set; }
         public string? DvmServerName { get; set; }
