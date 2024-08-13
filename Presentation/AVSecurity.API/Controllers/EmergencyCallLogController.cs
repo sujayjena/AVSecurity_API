@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetEmergencyCallLogList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetEmergencyCallLogList(EmergencyCallLogSearch_Request parameters)
         {
             IEnumerable<EmergencyCallLog_Response> lstRoles = await _emergencyCallLogRepository.GetEmergencyCallLogList(parameters);
             _response.Data = lstRoles.ToList();

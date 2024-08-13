@@ -1,6 +1,8 @@
 ﻿using AVSecurity.Domain.Entities;
+using AVSecurity.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,5 +36,14 @@ namespace AVSecurity.Application.Models
         public string? InspectedBy { get; set; }
         public int? InformedToId { get; set; }
         public string? InformedTo { get; set; }
+    }
+
+    public class FireExtinguisherSearch_Request : BaseSearchEntity
+    {
+        [DefaultValue(null)]
+        public DateTime? FromDate { get; set; }
+
+        [DefaultValue(null)]
+        public DateTime? ToDate { get; set; }
     }
 }

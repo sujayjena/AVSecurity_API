@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetLostAndFoundList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetLostAndFoundList(LostAndFoundSearch_Request parameters)
         {
             IEnumerable<LostAndFound_Response> lstRoles = await _lostAndFoundRepository.GetLostAndFoundList(parameters);
             _response.Data = lstRoles.ToList();

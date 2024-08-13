@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetExitEmployeeList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetExitEmployeeList(ExitEmployeeSearch_Request parameters)
         {
             IEnumerable<ExitEmployee_Response> lstRoles = await _exitEmployeeRepository.GetExitEmployeeList(parameters);
             _response.Data = lstRoles.ToList();

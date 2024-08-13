@@ -1,4 +1,5 @@
 ﻿using AVSecurity.Domain.Entities;
+using AVSecurity.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,5 +42,13 @@ namespace AVSecurity.Application.Models
         public string? ReceiverIDNo { get; set; }
         public string? Remarks { get; set; }
         public bool? IsNotificationToAdmin { get; set; }
+    }
+    public class LostAndFoundSearch_Request : BaseSearchEntity
+    {
+        [DefaultValue(null)]
+        public DateTime? FromDate { get; set; }
+
+        [DefaultValue(null)]
+        public DateTime? ToDate { get; set; }
     }
 }

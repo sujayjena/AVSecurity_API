@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveFoodDelivery(FoodDelivery_Request parameters);
 
-        Task<IEnumerable<FoodDelivery_Response>> GetFoodDeliveryList(BaseSearchEntity parameters);
+        Task<IEnumerable<FoodDelivery_Response>> GetFoodDeliveryList(FoodDeliverySearch_Request parameters);
 
         Task<FoodDelivery_Response?> GetFoodDeliveryById(int Id);
     }

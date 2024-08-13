@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveFireExtinguisher(FireExtinguisher_Request parameters);
 
-        Task<IEnumerable<FireExtinguisher_Response>> GetFireExtinguisherList(BaseSearchEntity parameters);
+        Task<IEnumerable<FireExtinguisher_Response>> GetFireExtinguisherList(FireExtinguisherSearch_Request parameters);
 
         Task<FireExtinguisher_Response?> GetFireExtinguisherById(int Id);
     }

@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetKeyList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetKeyList(KeySearch_Request parameters)
         {
             IEnumerable<Key_Response> lstRoles = await _keyRepository.GetKeyList(parameters);
             _response.Data = lstRoles.ToList();

@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveEmergencyCallLog(EmergencyCallLog_Request parameters);
 
-        Task<IEnumerable<EmergencyCallLog_Response>> GetEmergencyCallLogList(BaseSearchEntity parameters);
+        Task<IEnumerable<EmergencyCallLog_Response>> GetEmergencyCallLogList(EmergencyCallLogSearch_Request parameters);
 
         Task<EmergencyCallLog_Response?> GetEmergencyCallLogById(int Id);
     }

@@ -1,4 +1,5 @@
 ﻿using AVSecurity.Domain.Entities;
+using AVSecurity.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,5 +40,13 @@ namespace AVSecurity.Application.Models
         public int? EmergencyClosureId { get; set; }
         public string? EmergencyClosureName { get; set; }
         public string? ActionToken { get; set; }
+    }
+    public class EmergencyCallLogSearch_Request : BaseSearchEntity
+    {
+        [DefaultValue(null)]
+        public DateTime? FromDate { get; set; }
+
+        [DefaultValue(null)]
+        public DateTime? ToDate { get; set; }
     }
 }

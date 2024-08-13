@@ -1,4 +1,5 @@
 ﻿using AVSecurity.Domain.Entities;
+using AVSecurity.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,5 +45,13 @@ namespace AVSecurity.Application.Models
         public int? VerifiedId { get; set; }
         public string? VerifiedName { get; set; }
         public DateTime? VerifiedDate { get; set; }
+    }
+    public class FireAlarmChecklistSearch_Request : BaseSearchEntity
+    {
+        [DefaultValue(null)]
+        public DateTime? FromDate { get; set; }
+
+        [DefaultValue(null)]
+        public DateTime? ToDate { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveHandOver(HandOver_Request parameters);
 
-        Task<IEnumerable<HandOver_Response>> GetHandOverList(BaseSearchEntity parameters);
+        Task<IEnumerable<HandOver_Response>> GetHandOverList(HandOverSearch_Request parameters);
 
         Task<HandOver_Response?> GetHandOverById(int Id);
     }

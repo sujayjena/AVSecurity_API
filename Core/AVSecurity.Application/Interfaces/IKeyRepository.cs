@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveKey(Key_Request parameters);
 
-        Task<IEnumerable<Key_Response>> GetKeyList(BaseSearchEntity parameters);
+        Task<IEnumerable<Key_Response>> GetKeyList(KeySearch_Request parameters);
 
         Task<Key_Response?> GetKeyById(int Id);
     }

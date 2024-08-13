@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveFireAlarmChecklist(FireAlarmChecklist_Request parameters);
 
-        Task<IEnumerable<FireAlarmChecklist_Response>> GetFireAlarmChecklistList(BaseSearchEntity parameters);
+        Task<IEnumerable<FireAlarmChecklist_Response>> GetFireAlarmChecklistList(FireAlarmChecklistSearch_Request parameters);
 
         Task<FireAlarmChecklist_Response?> GetFireAlarmChecklistById(int Id);
     }

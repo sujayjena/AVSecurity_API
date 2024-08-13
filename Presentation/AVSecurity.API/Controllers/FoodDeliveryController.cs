@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetFoodDeliveryList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetFoodDeliveryList(FoodDeliverySearch_Request parameters)
         {
             IEnumerable<FoodDelivery_Response> lstRoles = await _foodDeliveryRepository.GetFoodDeliveryList(parameters);
             _response.Data = lstRoles.ToList();

@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetMasterAccessCardList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetMasterAccessCardList(MasterAccessCardSearch_Request parameters)
         {
             IEnumerable<MasterAccessCard_Response> lstRoles = await _masterAccessCardRepository.GetMasterAccessCardList(parameters);
             _response.Data = lstRoles.ToList();

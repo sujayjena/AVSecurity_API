@@ -1,6 +1,8 @@
 ﻿using AVSecurity.Domain.Entities;
+using AVSecurity.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,5 +30,13 @@ namespace AVSecurity.Application.Models
         public string? IssuedTo { get; set; }
         public string? CardNumber { get; set; }
         public DateTime? CardReturnDate { get; set; }
+    }
+    public class MasterAccessCardSearch_Request : BaseSearchEntity
+    {
+        [DefaultValue(null)]
+        public DateTime? FromDate { get; set; }
+
+        [DefaultValue(null)]
+        public DateTime? ToDate { get; set; }
     }
 }

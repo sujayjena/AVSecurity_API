@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetEscortDailyFeedbackList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetEscortDailyFeedbackList(EscortDailyFeedbackSearch_Request parameters)
         {
             IEnumerable<EscortDailyFeedback_Response> lstRoles = await _escortDailyFeedbackRepository.GetEscortDailyFeedbackList(parameters);
             _response.Data = lstRoles.ToList();

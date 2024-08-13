@@ -41,10 +41,12 @@ namespace AVSecurity.Persistence.Repositories
             return await SaveByStoredProcedure<int>("SaveFireAlarmChecklist", queryParameters);
         }
 
-        public async Task<IEnumerable<FireAlarmChecklist_Response>> GetFireAlarmChecklistList(BaseSearchEntity parameters)
+        public async Task<IEnumerable<FireAlarmChecklist_Response>> GetFireAlarmChecklistList(FireAlarmChecklistSearch_Request parameters)
         {
             DynamicParameters queryParameters = new DynamicParameters();
 
+            queryParameters.Add("@FromDate", parameters.FromDate);
+            queryParameters.Add("@ToDate", parameters.ToDate);
             queryParameters.Add("@SearchText", parameters.SearchText.SanitizeValue());
             //queryParameters.Add("@IsActive", parameters.IsActive);
             queryParameters.Add("@PageNo", parameters.PageNo);

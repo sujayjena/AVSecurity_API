@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveExitEmployee(ExitEmployee_Request parameters);
 
-        Task<IEnumerable<ExitEmployee_Response>> GetExitEmployeeList(BaseSearchEntity parameters);
+        Task<IEnumerable<ExitEmployee_Response>> GetExitEmployeeList(ExitEmployeeSearch_Request parameters);
 
         Task<ExitEmployee_Response?> GetExitEmployeeById(int Id);
     }

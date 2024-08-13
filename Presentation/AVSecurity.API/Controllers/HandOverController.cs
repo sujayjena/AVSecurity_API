@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetHandOverList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetHandOverList(HandOverSearch_Request parameters)
         {
             IEnumerable<HandOver_Response> lstRoles = await _handOverRepository.GetHandOverList(parameters);
             _response.Data = lstRoles.ToList();

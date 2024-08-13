@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetFireExtinguisherList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetFireExtinguisherList(FireExtinguisherSearch_Request parameters)
         {
             IEnumerable<FireExtinguisher_Response> lstRoles = await _fireExtinguisherRepository.GetFireExtinguisherList(parameters);
             _response.Data = lstRoles.ToList();

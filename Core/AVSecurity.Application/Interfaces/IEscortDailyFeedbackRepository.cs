@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveEscortDailyFeedback(EscortDailyFeedback_Request parameters);
 
-        Task<IEnumerable<EscortDailyFeedback_Response>> GetEscortDailyFeedbackList(BaseSearchEntity parameters);
+        Task<IEnumerable<EscortDailyFeedback_Response>> GetEscortDailyFeedbackList(EscortDailyFeedbackSearch_Request parameters);
 
         Task<EscortDailyFeedback_Response?> GetEscortDailyFeedbackById(int Id);
     }

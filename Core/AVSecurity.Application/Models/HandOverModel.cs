@@ -1,6 +1,8 @@
 ﻿using AVSecurity.Domain.Entities;
+using AVSecurity.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,5 +44,14 @@ namespace AVSecurity.Application.Models
         public string? AirwayBillNumber { get; set; }
         public int? ReceivedById { get; set; }
         public string? ReceivedBy { get; set; }
+    }
+
+    public class HandOverSearch_Request : BaseSearchEntity
+    {
+        [DefaultValue(null)]
+        public DateTime? FromDate { get; set; }
+
+        [DefaultValue(null)]
+        public DateTime? ToDate { get; set; }
     }
 }

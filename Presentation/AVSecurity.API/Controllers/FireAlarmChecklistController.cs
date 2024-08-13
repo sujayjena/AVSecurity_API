@@ -48,7 +48,7 @@ namespace AVSecurity.API.Controllers
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetFireAlarmChecklistList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetFireAlarmChecklistList(FireAlarmChecklistSearch_Request parameters)
         {
             IEnumerable<FireAlarmChecklist_Response> lstRoles = await _fireAlarmChecklistRepository.GetFireAlarmChecklistList(parameters);
             _response.Data = lstRoles.ToList();

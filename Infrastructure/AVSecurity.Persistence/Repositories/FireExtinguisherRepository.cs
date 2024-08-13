@@ -37,10 +37,12 @@ namespace AVSecurity.Persistence.Repositories
             return await SaveByStoredProcedure<int>("SaveFireExtinguisher", queryParameters);
         }
 
-        public async Task<IEnumerable<FireExtinguisher_Response>> GetFireExtinguisherList(BaseSearchEntity parameters)
+        public async Task<IEnumerable<FireExtinguisher_Response>> GetFireExtinguisherList(FireExtinguisherSearch_Request parameters)
         {
             DynamicParameters queryParameters = new DynamicParameters();
 
+            queryParameters.Add("@FromDate", parameters.FromDate);
+            queryParameters.Add("@ToDate", parameters.ToDate);
             queryParameters.Add("@SearchText", parameters.SearchText.SanitizeValue());
             //queryParameters.Add("@IsActive", parameters.IsActive);
             queryParameters.Add("@PageNo", parameters.PageNo);

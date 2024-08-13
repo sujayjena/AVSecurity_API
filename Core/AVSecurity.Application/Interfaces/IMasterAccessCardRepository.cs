@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveMasterAccessCard(MasterAccessCard_Request parameters);
 
-        Task<IEnumerable<MasterAccessCard_Response>> GetMasterAccessCardList(BaseSearchEntity parameters);
+        Task<IEnumerable<MasterAccessCard_Response>> GetMasterAccessCardList(MasterAccessCardSearch_Request parameters);
 
         Task<MasterAccessCard_Response?> GetMasterAccessCardById(int Id);
     }

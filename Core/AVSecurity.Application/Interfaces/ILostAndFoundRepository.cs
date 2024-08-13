@@ -12,7 +12,7 @@ namespace AVSecurity.Application.Interfaces
     {
         Task<int> SaveLostAndFound(LostAndFound_Request parameters);
 
-        Task<IEnumerable<LostAndFound_Response>> GetLostAndFoundList(BaseSearchEntity parameters);
+        Task<IEnumerable<LostAndFound_Response>> GetLostAndFoundList(LostAndFoundSearch_Request parameters);
 
         Task<LostAndFound_Response?> GetLostAndFoundById(int Id);
     }
