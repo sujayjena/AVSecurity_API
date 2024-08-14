@@ -51,6 +51,8 @@ namespace AVSecurity.Persistence
             services.AddScoped<IMasterAccessCardRepository, MasterAccessCardRepository>();
             services.AddScoped<IMaterialInwardNonReturnableRepository, MaterialInwardNonReturnableRepository>();
             services.AddScoped<IMaterialInwardReturnableRepository, MaterialInwardReturnableRepository>();
+            services.AddScoped<IMaterialOutwardNonReturnableRepository, MaterialOutwardNonReturnableRepository>();
+            services.AddScoped<IMaterialOutwardReturnableRepository, MaterialOutwardReturnableRepository>();
         }
     }
 }
