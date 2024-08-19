@@ -25,6 +25,9 @@ namespace AVSecurity.Application.Models
         public int? GenderId { get; set; }
         public string? IDNo { get; set; }
         public string? Remarks { get; set; }
+
+        [DefaultValue(false)]
+        public bool? IsNotificationToAdmin { get; set; }
     }
 
     public class NewJoiningAccessCard_Response : BaseResponseEntity
@@ -43,6 +46,7 @@ namespace AVSecurity.Application.Models
         public string? GenderName { get; set; }
         public string? IDNo { get; set; }
         public string? Remarks { get; set; }
+        public bool? IsNotificationToAdmin { get; set; }
     }
     public class NewJoiningAccessCardSearch_Request : BaseSearchEntity
     {

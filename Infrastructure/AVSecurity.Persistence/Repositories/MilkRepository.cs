@@ -27,11 +27,13 @@ namespace AVSecurity.Persistence.Repositories
             queryParameters.Add("@Id", parameters.Id);
             queryParameters.Add("@ShiftId", parameters.ShiftId);
             queryParameters.Add("@DateAndTime", parameters.DateAndTime);
+            queryParameters.Add("@EmailId", parameters.EmailId);
             queryParameters.Add("@DCNumber", parameters.DCNumber);
             queryParameters.Add("@ServiceProvider", parameters.ServiceProvider);
             queryParameters.Add("@DeliveryPersonName", parameters.DeliveryPersonName);
             queryParameters.Add("@DeliveryPersonMobileNo", parameters.DeliveryPersonMobileNo);
             queryParameters.Add("@NoofPacket", parameters.NoofPacket);
+            queryParameters.Add("@IsNotificationToAdmin", parameters.IsNotificationToAdmin);
             queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
 
             return await SaveByStoredProcedure<int>("SaveMilk", queryParameters);

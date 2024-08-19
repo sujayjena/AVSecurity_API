@@ -35,6 +35,7 @@ namespace AVSecurity.Persistence.Repositories
             queryParameters.Add("@GenderId", parameters.GenderId);
             queryParameters.Add("@IDNo", parameters.IDNo);
             queryParameters.Add("@Remarks", parameters.Remarks);
+            queryParameters.Add("@IsNotificationToAdmin", parameters.IsNotificationToAdmin);
             queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
 
             return await SaveByStoredProcedure<int>("SaveNewJoiningAccessCard", queryParameters);

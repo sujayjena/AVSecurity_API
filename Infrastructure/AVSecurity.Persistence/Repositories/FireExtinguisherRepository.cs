@@ -29,7 +29,7 @@ namespace AVSecurity.Persistence.Repositories
             queryParameters.Add("@FireEDate", parameters.FireEDate);
             queryParameters.Add("@EmployeeId", parameters.EmployeeId);
             queryParameters.Add("@PhoneNumber", parameters.PhoneNumber);
-            queryParameters.Add("@FireELocation", parameters.FireELocation);
+            queryParameters.Add("@LocationId", parameters.LocationId);
             queryParameters.Add("@InspectedById", parameters.InspectedById);
             queryParameters.Add("@InformedToId", parameters.InformedToId);
             queryParameters.Add("@UserId", SessionManager.LoggedInUserId);

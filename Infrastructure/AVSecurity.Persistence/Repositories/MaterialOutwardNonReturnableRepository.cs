@@ -29,8 +29,8 @@ namespace AVSecurity.Persistence.Repositories
             queryParameters.Add("@ShiftId", parameters.ShiftId);
             queryParameters.Add("@DateAndTime", parameters.DateAndTime);
             queryParameters.Add("@EmployeeId", parameters.EmployeeId);
-            queryParameters.Add("@SenderCompanyName", parameters.SenderCompanyName);
-            queryParameters.Add("@SenderName", parameters.SenderName);
+            queryParameters.Add("@ReceiverCompanyName", parameters.ReceiverCompanyName);
+            queryParameters.Add("@ReceiverName", parameters.ReceiverName);
             queryParameters.Add("@Address", parameters.Address);
             queryParameters.Add("@TransporterCompanyName", parameters.TransporterCompanyName);
             queryParameters.Add("@NatureOfSupply", parameters.NatureOfSupply);

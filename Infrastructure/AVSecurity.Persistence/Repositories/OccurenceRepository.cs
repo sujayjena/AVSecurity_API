@@ -11,36 +11,31 @@ using System.Threading.Tasks;
 
 namespace AVSecurity.Persistence.Repositories
 {
-    public class NewsPaperRepository : GenericRepository, INewsPaperRepository
+    public class OccurenceRepository : GenericRepository, IOccurenceRepository
     {
         private IConfiguration _configuration;
 
-        public NewsPaperRepository(IConfiguration configuration) : base(configuration)
+        public OccurenceRepository(IConfiguration configuration) : base(configuration)
         {
             _configuration = configuration;
         }
 
-        public async Task<int> SaveNewsPaper(NewsPaper_Request parameters)
+        public async Task<int> SaveOccurence(Occurence_Request parameters)
         {
             DynamicParameters queryParameters = new DynamicParameters();
 
             queryParameters.Add("@Id", parameters.Id);
             queryParameters.Add("@ShiftId", parameters.ShiftId);
             queryParameters.Add("@DateAndTime", parameters.DateAndTime);
-            queryParameters.Add("@ServiceProvider", parameters.ServiceProvider);
-            queryParameters.Add("@DeliveryPersonName", parameters.DeliveryPersonName);
-            queryParameters.Add("@DeliveryPersonMobileNo", parameters.DeliveryPersonMobileNo);
-            queryParameters.Add("@IsTimesOfIndia", parameters.IsTimesOfIndia);
-            queryParameters.Add("@IsEconomicTimes", parameters.IsEconomicTimes);
-            queryParameters.Add("@IsBusinessStandard", parameters.IsBusinessStandard);
-            queryParameters.Add("@NoofNewsPaper", parameters.NoofNewsPaper);
-            queryParameters.Add("@IsNotificationToAdmin", parameters.IsNotificationToAdmin);
+            queryParameters.Add("@ReportedBy", parameters.ReportedBy);
+            queryParameters.Add("@EventTypeId", parameters.EventTypeId);
+            queryParameters.Add("@EventDesc", parameters.EventDesc);
             queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
 
-            return await SaveByStoredProcedure<int>("SaveNewsPaper", queryParameters);
+            return await SaveByStoredProcedure<int>("SaveOccurence", queryParameters);
         }
 
-        public async Task<IEnumerable<NewsPaper_Response>> GetNewsPaperList(NewsPaperSearch_Request parameters)
+        public async Task<IEnumerable<Occurence_Response>> GetOccurenceList(OccurenceSearch_Request parameters)
         {
             DynamicParameters queryParameters = new DynamicParameters();
 
@@ -53,19 +48,19 @@ namespace AVSecurity.Persistence.Repositories
             queryParameters.Add("@Total", parameters.Total, null, System.Data.ParameterDirection.Output);
             queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
 
-            var result = await ListByStoredProcedure<NewsPaper_Response>("GetNewsPaperList", queryParameters);
+            var result = await ListByStoredProcedure<Occurence_Response>("GetOccurenceList", queryParameters);
             parameters.Total = queryParameters.Get<int>("Total");
 
             return result;
         }
 
-        public async Task<NewsPaper_Response?> GetNewsPaperById(int Id)
+        public async Task<Occurence_Response?> GetOccurenceById(int Id)
         {
             DynamicParameters queryParameters = new DynamicParameters();
 
             queryParameters.Add("@Id", Id);
 
-            return (await ListByStoredProcedure<NewsPaper_Response>("GetNewsPaperById", queryParameters)).FirstOrDefault();
+            return (await ListByStoredProcedure<Occurence_Response>("GetOccurenceById", queryParameters)).FirstOrDefault();
         }
     }
 }

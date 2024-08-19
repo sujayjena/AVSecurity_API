@@ -18,7 +18,7 @@ namespace AVSecurity.Application.Models
         public DateTime? FireEDate { get; set; }
         public int? EmployeeId { get; set; }
         public string? PhoneNumber { get; set; }
-        public string? FireELocation { get; set; }
+        public int? LocationId { get; set; }
         public int? InspectedById { get; set; }
         public int? InformedToId { get; set; }
     }
@@ -31,7 +31,8 @@ namespace AVSecurity.Application.Models
         public int? EmployeeId { get; set; }
         public string? EmployeeName { get; set; }
         public string? PhoneNumber { get; set; }
-        public string? FireELocation { get; set; }
+        public int? LocationId { get; set; }
+        public string? LocationName { get; set; }
         public int? InspectedById { get; set; }
         public string? InspectedBy { get; set; }
         public int? InformedToId { get; set; }

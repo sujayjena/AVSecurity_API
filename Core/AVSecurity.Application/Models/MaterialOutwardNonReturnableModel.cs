@@ -23,8 +23,8 @@ namespace AVSecurity.Application.Models
         public int? ShiftId { get; set; }
         public DateTime? DateAndTime { get; set; }
         public int? EmployeeId { get; set; }
-        public string? SenderCompanyName { get; set; }
-        public string? SenderName { get; set; }
+        public string? ReceiverCompanyName { get; set; }
+        public string? ReceiverName { get; set; }
         public string? Address { get; set; }
         public string? TransporterCompanyName { get; set; }
         public string? NatureOfSupply { get; set; }
@@ -52,8 +52,8 @@ namespace AVSecurity.Application.Models
         public string? EmailId { get; set; }
         public int? DepartmentId { get; set; }
         public string? DepartmentName { get; set; }
-        public string? SenderCompanyName { get; set; }
-        public string? SenderName { get; set; }
+        public string? ReceiverCompanyName { get; set; }
+        public string? ReceiverName { get; set; }
         public string? Address { get; set; }
         public string? TransporterCompanyName { get; set; }
         public string? NatureOfSupply { get; set; }

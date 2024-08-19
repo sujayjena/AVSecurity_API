@@ -56,6 +56,8 @@ namespace AVSecurity.Persistence
             services.AddScoped<IMilkRepository, MilkRepository>();
             services.AddScoped<INewJoiningAccessCardRepository, NewJoiningAccessCardRepository>();
             services.AddScoped<INewsPaperRepository, NewsPaperRepository>();
+            services.AddScoped<IOccurenceRepository, OccurenceRepository>();
+            services.AddScoped<IOutgoingCourierRepository, OutgoingCourierRepository>();
         }
     }
 }

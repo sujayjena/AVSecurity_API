@@ -29,6 +29,9 @@ namespace AVSecurity.Application.Models
         [DefaultValue(false)]
         public bool? IsBusinessStandard { get; set; }
         public int? NoofNewsPaper { get; set; }
+
+        [DefaultValue(false)]
+        public bool? IsNotificationToAdmin { get; set; }
     }
 
     public class NewsPaper_Response : BaseResponseEntity
@@ -49,6 +52,7 @@ namespace AVSecurity.Application.Models
         [DefaultValue(false)]
         public bool? IsBusinessStandard { get; set; }
         public int? NoofNewsPaper { get; set; }
+        public bool? IsNotificationToAdmin { get; set; }
     }
     public class NewsPaperSearch_Request : BaseSearchEntity
     {
