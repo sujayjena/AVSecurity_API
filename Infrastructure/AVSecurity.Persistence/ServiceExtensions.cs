@@ -58,6 +58,8 @@ namespace AVSecurity.Persistence
             services.AddScoped<INewsPaperRepository, NewsPaperRepository>();
             services.AddScoped<IOccurenceRepository, OccurenceRepository>();
             services.AddScoped<IOutgoingCourierRepository, OutgoingCourierRepository>();
+            services.AddScoped<IOvernightParkingRepository, OvernightParkingRepository>();
+            services.AddScoped<IPAChecklistRepository, PAChecklistRepository>();
         }
     }
 }
