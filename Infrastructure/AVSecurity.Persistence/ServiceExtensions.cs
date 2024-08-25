@@ -60,6 +60,12 @@ namespace AVSecurity.Persistence
             services.AddScoped<IOutgoingCourierRepository, OutgoingCourierRepository>();
             services.AddScoped<IOvernightParkingRepository, OvernightParkingRepository>();
             services.AddScoped<IPAChecklistRepository, PAChecklistRepository>();
+            services.AddScoped<IPatrollingRepository, PatrollingRepository>();
+            services.AddScoped<IPersonalBelongingRepository, PersonalBelongingRepository>();
+            services.AddScoped<ISecurityIncidentRepository, SecurityIncidentRepository>();
+            services.AddScoped<IShiftLogRepository, ShiftLogRepository>();
+            services.AddScoped<ITempIDCardIssueRepository, TempIDCardIssueRepository>();
+            services.AddScoped<IVehicleEntryChecklistRepository, VehicleEntryChecklistRepository>();
         }
     }
 }
