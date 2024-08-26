@@ -66,6 +66,9 @@ namespace AVSecurity.Persistence
             services.AddScoped<IShiftLogRepository, ShiftLogRepository>();
             services.AddScoped<ITempIDCardIssueRepository, TempIDCardIssueRepository>();
             services.AddScoped<IVehicleEntryChecklistRepository, VehicleEntryChecklistRepository>();
+            services.AddScoped<IVendorRepository, VendorRepository>();
+            services.AddScoped<IWaterCanRepository, WaterCanRepository>();
+            services.AddScoped<IWorkspaceChecklistRepository, WorkspaceChecklistRepository>();
         }
     }
 }
