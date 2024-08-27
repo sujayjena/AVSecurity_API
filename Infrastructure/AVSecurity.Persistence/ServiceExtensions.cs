@@ -69,6 +69,7 @@ namespace AVSecurity.Persistence
             services.AddScoped<IVendorRepository, VendorRepository>();
             services.AddScoped<IWaterCanRepository, WaterCanRepository>();
             services.AddScoped<IWorkspaceChecklistRepository, WorkspaceChecklistRepository>();
+            services.AddScoped<IIncomingCourierRepository, IncomingCourierRepository>();
         }
     }
 }
