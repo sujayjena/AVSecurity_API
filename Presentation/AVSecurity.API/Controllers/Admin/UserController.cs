@@ -6,6 +6,8 @@ using AVSecurity.Persistence.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml.Style;
+using OfficeOpenXml;
 using System.Text;
 
 namespace AVSecurity.API.Controllers.Admin
@@ -262,6 +264,132 @@ namespace AVSecurity.API.Controllers.Admin
             return _response;
         }
 
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ResponseModel> ExportUserData(bool IsActive = true)
+        {
+            _response.IsSuccess = false;
+            byte[] result;
+            int recordIndex;
+            ExcelWorksheet WorkSheet1;
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            var request = new BaseSearchEntity();
+            request.IsActive = IsActive;
+
+            IEnumerable<User_Response> lstSizeObj = await _userRepository.GetUserList(request);
+
+            using (MemoryStream msExportDataFile = new MemoryStream())
+            {
+                using (ExcelPackage excelExportData = new ExcelPackage())
+                {
+                    WorkSheet1 = excelExportData.Workbook.Worksheets.Add("Employee");
+                    WorkSheet1.TabColor = System.Drawing.Color.Black;
+                    WorkSheet1.DefaultRowHeight = 12;
+
+                    //Header of table
+                    WorkSheet1.Row(1).Height = 20;
+                    WorkSheet1.Row(1).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    WorkSheet1.Row(1).Style.Font.Bold = true;
+
+                    WorkSheet1.Cells[1, 1].Value = "User Code";
+                    WorkSheet1.Cells[1, 2].Value = "User Name";
+                    WorkSheet1.Cells[1, 3].Value = "Mobile";
+                    WorkSheet1.Cells[1, 4].Value = "EmailId";
+                    WorkSheet1.Cells[1, 5].Value = "Role";
+                    WorkSheet1.Cells[1, 6].Value = "ReportingTo";
+                    WorkSheet1.Cells[1, 7].Value = "Department";
+                    WorkSheet1.Cells[1, 8].Value = "Company";
+                    WorkSheet1.Cells[1, 9].Value = "Address";
+                    WorkSheet1.Cells[1, 10].Value = "Region";
+                    WorkSheet1.Cells[1, 11].Value = "State";
+                    WorkSheet1.Cells[1, 12].Value = "District";
+                    WorkSheet1.Cells[1, 13].Value = "City";
+                    WorkSheet1.Cells[1, 14].Value = "Pincode";
+                    WorkSheet1.Cells[1, 15].Value = "DateOfBirth";
+                    WorkSheet1.Cells[1, 16].Value = "Date Of Joining";
+                    WorkSheet1.Cells[1, 17].Value = "Emergency Contact Number";
+                    WorkSheet1.Cells[1, 18].Value = "Blood Group";
+                    WorkSheet1.Cells[1, 19].Value = "Aadhar Number";
+                    WorkSheet1.Cells[1, 20].Value = "Pan Number";
+                    WorkSheet1.Cells[1, 21].Value = "Mobile UniqueId";
+                    WorkSheet1.Cells[1, 22].Value = "IsMobileUser";
+                    WorkSheet1.Cells[1, 23].Value = "IsWebUser";
+                    WorkSheet1.Cells[1, 24].Value = "IsActive";
+
+
+                    recordIndex = 2;
+
+                    foreach (var items in lstSizeObj)
+                    {
+                        WorkSheet1.Cells[recordIndex, 1].Value = items.UserCode;
+                        WorkSheet1.Cells[recordIndex, 2].Value = items.UserName;
+                        WorkSheet1.Cells[recordIndex, 3].Value = items.MobileNumber;
+                        WorkSheet1.Cells[recordIndex, 4].Value = items.EmailId;
+                        WorkSheet1.Cells[recordIndex, 5].Value = items.RoleName;
+                        WorkSheet1.Cells[recordIndex, 6].Value = items.ReportingToName;
+                        WorkSheet1.Cells[recordIndex, 7].Value = items.DepartmentName;
+                        WorkSheet1.Cells[recordIndex, 8].Value = items.CompanyName;
+                        WorkSheet1.Cells[recordIndex, 9].Value = items.AddressLine;
+                        WorkSheet1.Cells[recordIndex, 10].Value = items.RegionName;
+                        WorkSheet1.Cells[recordIndex, 11].Value = items.StateName;
+                        WorkSheet1.Cells[recordIndex, 12].Value = items.DistrictName;
+                        WorkSheet1.Cells[recordIndex, 13].Value = items.CityName;
+                        WorkSheet1.Cells[recordIndex, 14].Value = items.Pincode;
+                        WorkSheet1.Cells[recordIndex, 15].Value = items.DateOfBirth.HasValue ? items.DateOfBirth.Value.ToString("dd/MM/yyyy") : string.Empty;
+                        WorkSheet1.Cells[recordIndex, 16].Value = items.DateOfJoining.HasValue ? items.DateOfJoining.Value.ToString("dd/MM/yyyy") : string.Empty;
+                        WorkSheet1.Cells[recordIndex, 17].Value = items.EmergencyContactNumber;
+                        WorkSheet1.Cells[recordIndex, 18].Value = items.BloodGroup;
+                        WorkSheet1.Cells[recordIndex, 19].Value = items.AadharNumber;
+                        WorkSheet1.Cells[recordIndex, 20].Value = items.PanNumber;
+                        WorkSheet1.Cells[recordIndex, 21].Value = items.MobileUniqueId;
+                        WorkSheet1.Cells[recordIndex, 22].Value = items.IsMobileUser;
+                        WorkSheet1.Cells[recordIndex, 23].Value = items.IsWebUser;
+                        WorkSheet1.Cells[recordIndex, 24].Value = items.IsActive == true ? "Active" : "Inactive";
+
+                        recordIndex += 1;
+                    }
+
+                    WorkSheet1.Column(1).AutoFit();
+                    WorkSheet1.Column(2).AutoFit();
+                    WorkSheet1.Column(3).AutoFit();
+                    WorkSheet1.Column(4).AutoFit();
+                    WorkSheet1.Column(5).AutoFit();
+                    WorkSheet1.Column(6).AutoFit();
+                    WorkSheet1.Column(7).AutoFit();
+                    WorkSheet1.Column(8).AutoFit();
+                    WorkSheet1.Column(9).AutoFit();
+                    WorkSheet1.Column(10).AutoFit();
+                    WorkSheet1.Column(11).AutoFit();
+                    WorkSheet1.Column(12).AutoFit();
+                    WorkSheet1.Column(13).AutoFit();
+                    WorkSheet1.Column(14).AutoFit();
+                    WorkSheet1.Column(15).AutoFit();
+                    WorkSheet1.Column(16).AutoFit();
+                    WorkSheet1.Column(17).AutoFit();
+                    WorkSheet1.Column(18).AutoFit();
+                    WorkSheet1.Column(19).AutoFit();
+                    WorkSheet1.Column(20).AutoFit();
+                    WorkSheet1.Column(21).AutoFit();
+                    WorkSheet1.Column(22).AutoFit();
+                    WorkSheet1.Column(23).AutoFit();
+                    WorkSheet1.Column(24).AutoFit();
+
+                    excelExportData.SaveAs(msExportDataFile);
+                    msExportDataFile.Position = 0;
+                    result = msExportDataFile.ToArray();
+                }
+            }
+
+            if (result != null)
+            {
+                _response.Data = result;
+                _response.IsSuccess = true;
+                _response.Message = "Exported successfully";
+            }
+
+            return _response;
+        }
         #endregion
     }
 }
