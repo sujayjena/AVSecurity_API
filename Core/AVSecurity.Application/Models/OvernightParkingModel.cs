@@ -20,6 +20,7 @@ namespace AVSecurity.Application.Models
         public string? VehicleNo { get; set; }
         public string? VehicleCondition { get; set; }
         public string? ParkedArea { get; set; }
+        public string? Remarks { get; set; }
 
         [DefaultValue(false)]
         public bool? IsNotificationToAdmin { get; set; }
@@ -35,6 +36,7 @@ namespace AVSecurity.Application.Models
         public string? VehicleNo { get; set; }
         public string? VehicleCondition { get; set; }
         public string? ParkedArea { get; set; }
+        public string? Remarks { get; set; }
         public bool? IsNotificationToAdmin { get; set; }
     }
     public class OvernightParkingSearch_Request : BaseSearchEntity

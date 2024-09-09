@@ -31,6 +31,7 @@ namespace AVSecurity.Persistence.Repositories
             queryParameters.Add("@VehicleNo", parameters.VehicleNo);
             queryParameters.Add("@VehicleCondition", parameters.VehicleCondition);
             queryParameters.Add("@ParkedArea", parameters.ParkedArea);
+            queryParameters.Add("@Remarks", parameters.Remarks);
             queryParameters.Add("@IsNotificationToAdmin", parameters.IsNotificationToAdmin);
             queryParameters.Add("@UserId", SessionManager.LoggedInUserId);
 
