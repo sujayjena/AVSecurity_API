@@ -183,7 +183,7 @@ namespace AVSecurity.API.Controllers.Admin
 
         [Route("[action]")]
         [HttpPost]
-        public async Task<ResponseModel> GetRoleList(BaseSearchEntity parameters)
+        public async Task<ResponseModel> GetRoleList(RoleSearch_Request parameters)
         {
             IEnumerable<Role_Response> lstRoles = await _profileRepository.GetRoleList(parameters);
             _response.Data = lstRoles.ToList();
@@ -217,7 +217,8 @@ namespace AVSecurity.API.Controllers.Admin
             ExcelWorksheet WorkSheet1;
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-            var request = new BaseSearchEntity();
+            var request = new RoleSearch_Request();
+            request.DepartmentId = 0;
 
             IEnumerable<Role_Response> lstSizeObj = await _profileRepository.GetRoleList(request);
 

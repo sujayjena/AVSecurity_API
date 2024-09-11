@@ -70,9 +70,10 @@ namespace AVSecurity.Persistence.Repositories
             return await SaveByStoredProcedure<int>("SaveRole", queryParameters);
         }
 
-        public async Task<IEnumerable<Role_Response>> GetRoleList(BaseSearchEntity parameters)
+        public async Task<IEnumerable<Role_Response>> GetRoleList(RoleSearch_Request parameters)
         {
             DynamicParameters queryParameters = new DynamicParameters();
+            queryParameters.Add("@DepartmentId", parameters.DepartmentId);
             queryParameters.Add("@SearchText", parameters.SearchText.SanitizeValue());
             queryParameters.Add("@IsActive", parameters.IsActive);
             queryParameters.Add("@PageNo", parameters.PageNo);

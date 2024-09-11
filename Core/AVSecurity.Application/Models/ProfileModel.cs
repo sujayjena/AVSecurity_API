@@ -1,4 +1,5 @@
 ﻿using AVSecurity.Domain.Entities;
+using AVSecurity.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +43,12 @@ namespace AVSecurity.Application.Models
         public int? EmployeeLevelId { get; set; }
 
         public bool? IsActive { get; set; }
+    }
+
+    public class RoleSearch_Request : BaseSearchEntity
+    {
+        public int? DepartmentId { get; set; }
+
     }
 
     public class Role_Response : BaseResponseEntity
